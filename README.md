@@ -111,6 +111,7 @@ I recommend reading the docs of these plugins to understand them better. Each pl
 * [vim-irblack](https://github.com/wgibbs/vim-irblack)
 * [mayansmoke](https://github.com/vim-scripts/mayansmoke)
 * [vim-pyte](https://github.com/therubymug/vim-pyte)
+<!-- * [papercolor-theme](https://github.com/NLKNguyen/papercolor-theme.git) -->
 
 
 ## Included modes
@@ -125,7 +126,6 @@ I recommend reading the docs of these plugins to understand them better. Each pl
 * [typescript-vim](https://github.com/leafgarland/typescript-vim)
 * [vim-javascript](https://github.com/pangloss/vim-javascript)
 * [vim-python-pep8-indent](https://github.com/Vimjas/vim-python-pep8-indent)
-
 
 ## How to include your own stuff?
 
