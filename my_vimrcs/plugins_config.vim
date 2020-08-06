@@ -29,3 +29,10 @@ let g:lightline = {
       \ 'separator': { 'left': ' ', 'right': ' ' },
       \ 'subseparator': { 'left': ' ', 'right': ' ' }
       \ }
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Git Gutter
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Avoid the problem where grep produces non-plain output; e.g. ANSI escape codes or colours.
+let g:gitgutter_grep=''
+
