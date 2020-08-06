@@ -10,9 +10,9 @@ autocmd BufWritePre * %s/\s\+$//e
 " the '2fw' command is executed and the displayed '2f' is removed.
 set showcmd
 
-" HasPaste | Full filepath | isUnsaved + | isReadOnly | isHelpBuffer | isPreviewWindow | currentWorkingDirectory | line | column
-" Overriden by lightline?
-" set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ %l\ \ Column:\ %c
+" 1 tab == 2 spaces
+set shiftwidth=2
+set tabstop=2
 
 " You can add some shortcuts to make it easier to jump between errors in quickfix list
 " map <C-n> :cnext<CR>
