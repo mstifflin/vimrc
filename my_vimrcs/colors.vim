@@ -16,9 +16,6 @@ let g:PaperColor_Theme_Options = {
     \               'color05': ['#228B22', ''],
     \               'search_fg': ['#000000', ''],
     \               'search_bg': ['#f7c0d4', ''],
-    \               'tabline_bg': ['#33BBFF', ''],
-    \               'tabline_active_fg': ['#FFFFFF', ''],
-    \               'tabline_active_bg': ['#0E07F7', ''],
     \           }
     \       },
     \       'default.dark': {
