@@ -14,6 +14,9 @@ set showcmd
 set shiftwidth=2
 set tabstop=2
 
+" Set 10 lines to the cursor - when moving vertically using j/k
+set so=10
+
 " You can add some shortcuts to make it easier to jump between errors in quickfix list
 " map <C-n> :cnext<CR>
 " map <C-m> :cprevious<CR>
