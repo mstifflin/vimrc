@@ -22,3 +22,6 @@ set tabstop=2
 " Set 10 lines to the cursor - when moving vertically using j/k
 set so=10
 
+" Open help files in a vertical split by default
+autocmd FileType help wincmd L
+
