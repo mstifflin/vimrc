@@ -74,5 +74,5 @@ let g:gitgutter_grep=''
 """"""""""""""""""""""""""""""
 " => CTRL-P
 """"""""""""""""""""""""""""""
-let g:ctrlp_custom_ignore = 'node_modules\|^\.DS_Store\|^\.git\|^\.coffee|^\.gen|^\gen|^\vendor'
+let g:ctrlp_custom_ignore = 'node_modules\|.gen\|gen\|vendor\|go-build\|^\.DS_Store\|^\.git\|^\.coffee'
 
