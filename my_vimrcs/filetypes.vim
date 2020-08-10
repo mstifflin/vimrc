@@ -46,3 +46,6 @@ autocmd Filetype go command! -bang AV call go#alternate#Switch(<bang>0, 'vsplit'
 autocmd Filetype go command! -bang AS call go#alternate#Switch(<bang>0, 'split')
 autocmd Filetype go command! -bang AT call go#alternate#Switch(<bang>0, 'tabe')
 
+" Use Deoplete for Go files
+call deoplete#custom#option('omni_patterns', { 'go': '[^. *\t]\.\w*'  })
+

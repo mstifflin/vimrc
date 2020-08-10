@@ -76,3 +76,9 @@ let g:gitgutter_grep=''
 """"""""""""""""""""""""""""""
 let g:ctrlp_custom_ignore = 'node_modules\|.gen\|gen\|vendor\|go-build\|^\.DS_Store\|^\.git\|^\.coffee'
 
+""""""""""""""""""""""""""""""
+" => Deoplete
+""""""""""""""""""""""""""""""
+" Use deoplete.
+let g:deoplete#enable_at_startup = 1
+
