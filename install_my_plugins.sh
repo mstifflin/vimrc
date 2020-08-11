@@ -9,3 +9,5 @@ git clone https://github.com/Shougo/deoplete.nvim.git ./my_plugins/deoplete
 git clone https://github.com/roxma/nvim-yarp.git ./my_plugins/nvim-yarp
 git clone https://github.com/roxma/vim-hug-neovim-rpc.git ./my_plugins/vim-hug-neovim-rpc
 
+# TOML syntax support
+git clone https://github.com/cespare/vim-toml.git ./my_plugins/vim-toml
