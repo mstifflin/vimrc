@@ -25,3 +25,8 @@ set so=10
 " Open help files in a vertical split by default
 autocmd FileType help wincmd L
 
+" Set timeout len to 1000 ms
+set tm=1000
+
+" Turn off audio error bell
+set belloff=all
