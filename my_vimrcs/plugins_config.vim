@@ -82,3 +82,15 @@ let g:ctrlp_custom_ignore = 'node_modules\|.gen\|gen\|vendor\|go-build\|^\.DS_St
 " Use deoplete.
 let g:deoplete#enable_at_startup = 1
 
+
+""""""""""""""""""""""""""""""
+" => BufExplorer
+""""""""""""""""""""""""""""""
+" Display default help
+let g:bufExplorerDefaultHelp=1
+" Sort by most recently used
+let g:bufExplorerSortBy='mru'
+" Do not show unlisted buffers.
+let g:bufExplorerShowUnlisted=0
+" Do not 'No Name' buffers.
+let g:bufExplorerShowNoName=0
