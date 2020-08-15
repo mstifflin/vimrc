@@ -2,32 +2,19 @@
 
 # The Ultimate vimrc
 
-Over the last 10 years, I have used and tweaked Vim. This configuration is the ultimate vimrc (or at least my version of it).
+Fork of https://github.com/amix/vimrc
 
 There are two versions:
 
-* **The Basic**: If you want something small just copy [basic.vim](https://github.com/amix/vimrc/blob/master/vimrcs/basic.vim) into your ~/.vimrc and you will have a good basic setup
+* **The Basic**: If you want something small just copy [basic.vim](https://github.com/mstifflin/vimrc/blob/master/vimrcs/basic.vim) into your ~/.vimrc and you will have a good basic setup
 * **The Awesome**: Includes a ton of useful plugins, color schemes, and configurations
-
-I would, of course, recommend using the awesome version.
-
 
 ## How to install the Awesome version?
 ### Install for your own user only
 The awesome version includes a lot of great plugins, configurations and color schemes that make Vim a lot better. To install it simply do following from your terminal:
 
-	git clone --depth=1 git@github.com:mstifflin/vimrc.git ~/.vim_runtime
+	git clone git@github.com:mstifflin/vimrc.git ~/.vim_runtime
 	sh ~/.vim_runtime/install_awesome_vimrc.sh
-
-### Install for multiple users
-To install for multiple users, the repository needs to be cloned to a location accessible for all the intended users.
-
-	git clone --depth=1 https://github.com/mstifflin/vimrc.git /opt/vim_runtime
-	sh ~/.vim_runtime/install_awesome_parameterized.sh /opt/vim_runtime user0 user1 user2
-	# to install for all users with home directories
-	sh ~/.vim_runtime/install_awesome_parameterized.sh /opt/vim_runtime --all
-
-Naturally, `/opt/vim_runtime` can be any directory, as long as all the users specified have read access.
 
 ## Fonts
 
@@ -40,11 +27,11 @@ Some other fonts that Awesome will try to use:
 
 ## How to install the Basic version?
 
-The basic version is just one file and no plugins. Just copy [basic.vim](https://github.com/amix/vimrc/blob/master/vimrcs/basic.vim) and paste it into your vimrc.
+The basic version is just one file and no plugins. Just copy [basic.vim](https://github.com/mstifflin/vimrc/blob/master/vimrcs/basic.vim) and paste it into your vimrc.
 
 The basic version is useful to install on remote servers where you don't need many plugins, and you don't do many edits.
 
-	git clone --depth=1 https://github.com/amix/vimrc.git ~/.vim_runtime
+	git clone --depth=1 https://github.com/mstifflin/vimrc.git ~/.vim_runtime
 	sh ~/.vim_runtime/install_basic_vimrc.sh
 
 
@@ -130,11 +117,7 @@ I recommend reading the docs of these plugins to understand them better. Each pl
 
 ## How to include your own stuff?
 
-After you have installed the setup, you can create **~/.vim_runtime/my_configs.vim** to fill in any configurations that are important for you. For instance, my **my_configs.vim** looks like this:
-
-	~/.vim_runtime (master)> cat my_configs.vim
-	map <leader>ct :cd ~/Desktop/Todoist/todoist<cr>
-	map <leader>cw :cd ~/Desktop/Wedoist/wedoist<cr>
+After you have installed the setup, you can create **~/.vim_runtime/my_configs.vim** to fill in any configurations that are important for you.
 
 You can also install your plugins, for instance, via pathogen you can install [vim-rails](https://github.com/tpope/vim-rails):
 
