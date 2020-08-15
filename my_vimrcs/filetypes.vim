@@ -19,13 +19,13 @@ let g:go_metalinter_enabled = ['vet', 'golint', 'errcheck']
 let g:go_metalinter_autosave = 1
 
 " Turn off highlighting and displaying infomation of the variable under the cursor
-let g:go_auto_type_info = 0
+let g:go_auto_type_info = 1
 
 " Stop annoying pop up for every gofmt failure
 let g:go_fmt_fail_silently = 1
 
-" Sometimes we just want to quickly see all matching identifiers. Such as variables, functions, etc.. Suppose you have the following Go code
-let g:go_auto_sameids = 1
+" Turn off highlighting of same identifiers (slow?)
+let g:go_auto_sameids = 0
 
 " Currently by default :GoDecls and :GoDeclsDir show type and function declarations. This is customizable with the g:go_decls_includes setting. By default it's in the form of:
 let g:go_decls_includes = "func,type"
