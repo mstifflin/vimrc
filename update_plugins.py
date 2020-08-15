@@ -9,6 +9,7 @@ except ImportError:
 import zipfile
 import shutil
 import tempfile
+# may need `pip install requests`
 import requests
 
 from os import path
@@ -58,6 +59,8 @@ typescript-vim https://github.com/leafgarland/typescript-vim
 vim-javascript https://github.com/pangloss/vim-javascript
 vim-python-pep8-indent https://github.com/Vimjas/vim-python-pep8-indent
 """.strip()
+# vim-go https://github.com/fatih/vim-go
+# papercolor-theme https://github.com/NLKNguyen/papercolor-theme.git
 
 GITHUB_ZIP = "%s/archive/master.zip"
 
