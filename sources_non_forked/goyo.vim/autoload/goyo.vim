@@ -203,7 +203,7 @@ function! s:goyo_on(dim)
   endif
 
   " vim-signify
-  let t:goyo_disabled_signify = !empty(getbufvar(bufnr(''), 'sy'))
+  let t:goyo_disabled_signify = exists('b:sy') && b:sy.active
   if t:goyo_disabled_signify
     SignifyToggle
   endif
