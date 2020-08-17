@@ -634,8 +634,7 @@ Given markdown;
 
 Execute (link with url title):
   AssertEqual SyntaxOf('https://domain.tld'), 'mkdInlineURL'
-  AssertNotEqual SyntaxOf(']'), 'mkdInlineURL'
-  AssertEqual SyntaxOf('https://domain.com'), 'mkdURL'
+  AssertEqual SyntaxOf('https://domain.com'), 'mkdInlineURL'
   AssertNotEqual SyntaxOf('not_a_link'), 'mkdInlineURL'
 
 # Code Blocks
