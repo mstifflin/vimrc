@@ -14,3 +14,10 @@ set background=light
 "     set background=dark
 " end if
 
+" Conditional needed to be set last/in extended?
+" Didn't work when it was in plugins_config
+" Use deoplete if python3 (hard dependency of deoplete) is available
+if has('python3')
+  let g:deoplete#enable_at_startup = 1
+end if
+
