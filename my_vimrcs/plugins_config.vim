@@ -80,8 +80,7 @@ let g:ctrlp_custom_ignore = 'node_modules\|.gen\|gen\|vendor\|go-build\|^\.DS_St
 " => Deoplete
 """"""""""""""""""""""""""""""
 " Use deoplete.
-let g:deoplete#enable_at_startup = 1
-
+" let g:deoplete#enable_at_startup = 1
 
 """"""""""""""""""""""""""""""
 " => BufExplorer
