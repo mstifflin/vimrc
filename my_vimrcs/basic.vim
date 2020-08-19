@@ -30,3 +30,7 @@ set tm=1000
 
 " Turn off audio error bell
 set belloff=all
+
+" Unset space and ctrl space as search (from vimrcs/basic.vim)
+unmap <space>
+unmap <C-space>
