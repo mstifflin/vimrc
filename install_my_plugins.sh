@@ -1,13 +1,13 @@
 # Comprehensive Go plugin for vim
-git clone https://github.com/fatih/vim-go ./my_plugins/vim-go
+git clone https://github.com/fatih/vim-go ~/.vim_runtime/my_plugins/vim-go
 
 # Preferred light color theme
-git clone https://github.com/NLKNguyen/papercolor-theme.git ./my_plugins/papercolor-theme
+git clone https://github.com/NLKNguyen/papercolor-theme.git ~/.vim_runtime/my_plugins/papercolor-theme
 
 # Deoplete (omnifunc real time autocompletion) and its dependencies
-git clone https://github.com/Shougo/deoplete.nvim.git ./my_plugins/deoplete
-git clone https://github.com/roxma/nvim-yarp.git ./my_plugins/nvim-yarp
-git clone https://github.com/roxma/vim-hug-neovim-rpc.git ./my_plugins/vim-hug-neovim-rpc
+git clone https://github.com/Shougo/deoplete.nvim.git ~/.vim_runtime/my_plugins/deoplete
+git clone https://github.com/roxma/nvim-yarp.git ~/.vim_runtime/my_plugins/nvim-yarp
+git clone https://github.com/roxma/vim-hug-neovim-rpc.git ~/.vim_runtime/my_plugins/vim-hug-neovim-rpc
 
 # TOML syntax support
-git clone https://github.com/cespare/vim-toml.git ./my_plugins/vim-toml
+git clone https://github.com/cespare/vim-toml.git ~/.vim_runtime/my_plugins/vim-toml
