@@ -11,3 +11,7 @@ git clone https://github.com/roxma/vim-hug-neovim-rpc.git ~/.vim_runtime/my_plug
 
 # TOML syntax support
 git clone https://github.com/cespare/vim-toml.git ~/.vim_runtime/my_plugins/vim-toml
+
+# Thrift syntax support
+git clone https://github.com/solarnz/thrift.vim.git ~/.vim_runtime/my_plugins/vim-thrift
+
