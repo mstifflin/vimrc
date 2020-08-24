@@ -1,12 +1,9 @@
 """"""""""""""""""""""""""""""
 " => Go
 """"""""""""""""""""""""""""""
-autocmd FileType go nmap <leader>b  <Plug>(go-build)
-autocmd FileType go nmap <leader>r  <Plug>(go-run)
-autocmd FileType go nmap <leader>t  <Plug>(go-test)
-autocmd FileType go nmap <leader>b  <Plug>(go-build)
-autocmd FileType go nmap <Leader>c <Plug>(go-coverage-toggle)
-autocmd FileType go nmap <Leader>i <Plug>(go-info)
+autocmd FileType go nmap <leader>t :GoTestFunc!<cr>
+autocmd FileType go nmap <leader>T :GoTest!<cr>
+autocmd FileType go nmap <leader>c :GoCoverageToggle!<cr>
 
 let g:go_fmt_command = "goimports"
 let g:go_highlight_types = 1
