@@ -15,8 +15,17 @@ let g:go_highlight_extra_types = 1
 let g:go_metalinter_enabled = ['vet', 'golint', 'errcheck']
 let g:go_metalinter_autosave = 1
 
-" Turn off highlighting and displaying infomation of the variable under the cursor
-let g:go_auto_type_info = 1
+" Instead of creating a template file on new file creation, use the package name
+let g:go_template_use_pkg = 1
+
+" Turn off auto jumping to errors
+let g:go_jump_to_error = 0
+
+" Show the name of each failed test before errors/logs
+let g:go_test_show_name = 1
+
+" Turn off code completion via omnifunc
+" let g:go_code_completion_enabled = 0
 
 " Stop annoying pop up for every gofmt failure
 let g:go_fmt_fail_silently = 1
