@@ -80,7 +80,13 @@ let g:ctrlp_custom_ignore = 'node_modules\|.gen\|gen\|vendor\|go-build\|^\.DS_St
 " => Deoplete
 """"""""""""""""""""""""""""""
 " Use deoplete.
+" This has been moved to extended vim since there is a conditional for this config value
 " let g:deoplete#enable_at_startup = 1
+
+call deoplete#custom#option({
+  \ 'max_list': 20,
+  \ 'on_insert_enter': v:false,
+  \ })
 
 """"""""""""""""""""""""""""""
 " => BufExplorer
