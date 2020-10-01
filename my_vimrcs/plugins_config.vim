@@ -83,6 +83,15 @@ let g:ctrlp_custom_ignore = 'node_modules\|.gen\|gen\|vendor\|go-build\|^\.DS_St
 " This has been moved to extended vim since there is a conditional for this config value
 " let g:deoplete#enable_at_startup = 1
 
+" Delay completion by 5 milliseconds
+let g:deoplete#auto_complete_delay = 5
+
+" The default key for autocompletion is <Ctrl-x><Ctrl-o>
+" and <Ctrl-P> for going up in the list and <Ctrl-N> for going down.
+" deoplete tab-complete
+" From https://www.gregjs.com/vim/2016/configuring-the-deoplete-asynchronous-keyword-completion-plugin-with-tern-for-vim/
+inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
+
 call deoplete#custom#option({
   \ 'max_list': 20,
   \ 'on_insert_enter': v:false,
