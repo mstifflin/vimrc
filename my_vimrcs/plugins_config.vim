@@ -108,3 +108,13 @@ let g:bufExplorerSortBy='mru'
 let g:bufExplorerShowUnlisted=0
 " Do not 'No Name' buffers.
 let g:bufExplorerShowNoName=0
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => vim-visual-multi
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" https://github.com/mg979/vim-visual-multi/wiki/Mappings#full-mappings-list
+let g:VM_maps = {}
+let g:VM_maps['Find Under']         = '<C-s>'           " replace C-n
+let g:VM_maps['Find Subword Under'] = '<C-s>'           " replace visual C-n
+
