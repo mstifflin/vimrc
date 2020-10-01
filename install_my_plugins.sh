@@ -15,3 +15,6 @@ git clone https://github.com/cespare/vim-toml.git ~/.vim_runtime/my_plugins/vim-
 # Thrift syntax support
 git clone https://github.com/solarnz/thrift.vim.git ~/.vim_runtime/my_plugins/vim-thrift
 
+# Vim multiple cursors (old vim-multiple-cursor plugin is deprecated by this)
+git clone https://github.com/mg979/vim-visual-multi.git ~/.vim_runtime/my_plugins/vim-visual-multi
+
