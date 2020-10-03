@@ -1,20 +1,49 @@
 # Comprehensive Go plugin for vim
-git clone https://github.com/fatih/vim-go ~/.vim_runtime/my_plugins/vim-go
+if [ ! -d ~/.vim_runtime/my_plugins/vim-go ]; then
+  git clone https://github.com/fatih/vim-go ~/.vim_runtime/my_plugins/vim-go
+else
+  echo "vim-go already installed"
+fi
 
 # Preferred light color theme
-git clone https://github.com/NLKNguyen/papercolor-theme.git ~/.vim_runtime/my_plugins/papercolor-theme
+if [ ! -d ~/.vim_runtime/my_plugins/papercolor-theme ]; then
+  git clone https://github.com/NLKNguyen/papercolor-theme.git ~/.vim_runtime/my_plugins/papercolor-theme
+else
+  echo "papercolor-theme already installed"
+fi
 
 # Deoplete (omnifunc real time autocompletion) and its dependencies
-git clone https://github.com/Shougo/deoplete.nvim.git ~/.vim_runtime/my_plugins/deoplete
-git clone https://github.com/roxma/nvim-yarp.git ~/.vim_runtime/my_plugins/nvim-yarp
-git clone https://github.com/roxma/vim-hug-neovim-rpc.git ~/.vim_runtime/my_plugins/vim-hug-neovim-rpc
+if [ ! -d ~/.vim_runtime/my_plugins/deoplete ]; then
+  git clone https://github.com/Shougo/deoplete.nvim.git ~/.vim_runtime/my_plugins/deoplete
+  git clone https://github.com/roxma/nvim-yarp.git ~/.vim_runtime/my_plugins/nvim-yarp
+  git clone https://github.com/roxma/vim-hug-neovim-rpc.git ~/.vim_runtime/my_plugins/vim-hug-neovim-rpc
+
+  if [ $(pip3 list | grep pynvim) = "" ]; then
+    pip3 install --user pynvim
+  else
+    echo "pynvim already installed"
+  fi
+else
+  echo "deoplete and its dependencies already installed"
+fi
 
 # TOML syntax support
-git clone https://github.com/cespare/vim-toml.git ~/.vim_runtime/my_plugins/vim-toml
+if [ ! -d ~/.vim_runtime/my_plugins/vim-toml ]; then
+  git clone https://github.com/cespare/vim-toml.git ~/.vim_runtime/my_plugins/vim-toml
+else
+  echo "vim-toml already installed"
+fi
 
 # Thrift syntax support
-git clone https://github.com/solarnz/thrift.vim.git ~/.vim_runtime/my_plugins/vim-thrift
+if [ ! -d ~/.vim_runtime/my_plugins/vim-thrift ]; then
+  git clone https://github.com/solarnz/thrift.vim.git ~/.vim_runtime/my_plugins/vim-thrift
+else
+  echo "vim-thrift already installed"
+fi
 
 # Vim multiple cursors (old vim-multiple-cursor plugin is deprecated by this)
-git clone https://github.com/mg979/vim-visual-multi.git ~/.vim_runtime/my_plugins/vim-visual-multi
-
+if [ ! -d ~/.vim_runtime/my_plugins/vim-visual-multi ]; then
+  git clone https://github.com/mg979/vim-visual-multi.git ~/.vim_runtime/my_plugins/vim-visual-multi
+else
+  echo "vim-visual-multi already installed"
+fi
