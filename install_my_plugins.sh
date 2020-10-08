@@ -15,16 +15,29 @@ fi
 # Deoplete (omnifunc real time autocompletion) and its dependencies
 if [ ! -d ~/.vim_runtime/my_plugins/deoplete ]; then
   git clone https://github.com/Shougo/deoplete.nvim.git ~/.vim_runtime/my_plugins/deoplete
-  git clone https://github.com/roxma/nvim-yarp.git ~/.vim_runtime/my_plugins/nvim-yarp
-  git clone https://github.com/roxma/vim-hug-neovim-rpc.git ~/.vim_runtime/my_plugins/vim-hug-neovim-rpc
-
-  if [ $(pip3 list | grep pynvim) = "" ]; then
-    pip3 install --user pynvim
-  else
-    echo "pynvim already installed"
-  fi
 else
   echo "deoplete and its dependencies already installed"
+fi
+
+# Deoplete dependency
+if [ ! -d ~/.vim_runtime/my_plugins/nvim-yarp ]; then
+  git clone https://github.com/roxma/nvim-yarp.git ~/.vim_runtime/my_plugins/nvim-yarp
+else
+  echo "nvim-yarp already installed"
+fi
+
+# Deoplete dependency
+if [ ! -d ~/.vim_runtime/my_plugins/vim-hug-neovim-rpc ]; then
+  git clone https://github.com/roxma/vim-hug-neovim-rpc.git ~/.vim_runtime/my_plugins/vim-hug-neovim-rpc
+else
+  echo "vim-hug-neovim-rpc already installed"
+fi
+
+# Deoplete dependency
+if [[ $(pip3 list | grep pynvim) = "" ]]; then
+  pip3 install --user pynvim
+else
+  echo "pynvim already installed"
 fi
 
 # TOML syntax support
