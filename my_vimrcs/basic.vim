@@ -44,3 +44,5 @@ inoremap <leader>k <Esc>:m .-2<CR>==gi
 vnoremap <leader>j :m '>+1<CR>gv=gv
 vnoremap <leader>k :m '<-2<CR>gv=gv
 
+let maplocalleader = "\\"
+

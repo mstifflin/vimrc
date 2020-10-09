@@ -116,3 +116,10 @@ let g:VM_maps = {}
 let g:VM_maps['Find Under']         = '<C-s>'           " replace C-n
 let g:VM_maps['Find Subword Under'] = '<C-s>'           " replace visual C-n
 
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => vim-orgmode
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+packloadall
+silent! helptags ALL
+
