@@ -47,8 +47,8 @@ command! W execute 'w !sudo tee % > /dev/null' <bar> edit!
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => VIM user interface
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Set 7 lines to the cursor - when moving vertically using j/k
-set so=7
+" Set 10 lines to the cursor - when moving vertically using j/k
+set so=10
 
 " Avoid garbled characters in Chinese language windows OS
 let $LANG='en'
@@ -106,8 +106,9 @@ set mat=2
 " No annoying sound on errors
 set noerrorbells
 set novisualbell
+set belloff=all
 set t_vb=
-set tm=500
+set tm=1000
 
 " Properly disable sound on errors on MacVim
 if has("gui_macvim")
@@ -117,6 +118,17 @@ endif
 
 " Add a bit extra margin to the left
 set foldcolumn=1
+
+" Highlight the line on entering insert mode, turn it off on returning to
+" normal mode
+autocmd InsertEnter * set cursorline
+autocmd InsertLeave * set nocursorline
+
+" turn on hyrid line numbers (both relative and absolute)
+set number relativenumber
+
+" Open help files in a vertical split by default
+autocmd FileType help wincmd L
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -170,9 +182,9 @@ set expandtab
 " Be smart when using tabs ;)
 set smarttab
 
-" 1 tab == 4 spaces
-set shiftwidth=4
-set tabstop=4
+" 1 tab == 2 spaces
+set shiftwidth=2
+set tabstop=2
 
 " Linebreak on 500 characters
 set lbr
@@ -195,10 +207,6 @@ vnoremap <silent> # :<C-u>call VisualSelection('', '')<CR>?<C-R>=@/<CR><CR>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Moving around, tabs, windows and buffers
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Map <Space> to / (search) and Ctrl-<Space> to ? (backwards search)
-map <space> /
-map <C-space> ?
-
 " Disable highlight when <leader><cr> is pressed
 map <silent> <leader><cr> :noh<cr>
 
@@ -247,6 +255,16 @@ endtry
 " Return to last edit position when opening files (You want this!)
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 
+let maplocalleader = "\\"
+
+" https://vim.fandom.com/wiki/Moving_lines_up_or_down
+" ,j and ,k to move lines up and down
+" nnoremap <leader>j :m .+1<CR>==
+" nnoremap <leader>k :m .-2<CR>==
+" inoremap <leader>j <Esc>:m .+1<CR>==gi
+" inoremap <leader>k <Esc>:m .-2<CR>==gi
+" vnoremap <leader>j :m '>+1<CR>gv=gv
+" vnoremap <leader>k :m '<-2<CR>gv=gv
 
 """"""""""""""""""""""""""""""
 " => Status line
@@ -257,6 +275,11 @@ set laststatus=2
 " Format the status line
 set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ %l\ \ Column:\ %c
 
+" Display an incomplete command in the lower right corner of the Vim window,
+" left of the ruler.  For example, when you type '2f', Vim is waiting for you to
+" type the character to find and '2f' is displayed.  When you press 'w' next,
+" the '2fw' command is executed and the displayed '2f' is removed.
+set showcmd
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Editing mappings
@@ -288,6 +311,8 @@ endfun
 
 if has("autocmd")
     autocmd BufWritePre *.txt,*.js,*.py,*.wiki,*.sh,*.coffee :call CleanExtraSpaces()
+    " Automatically trim trailing whitespace on save
+    autocmd BufWritePre * %s/\s\+$//e
 endif
 
 
@@ -372,55 +397,4 @@ function! VisualSelection(direction, extra_filter) range
     let @/ = l:pattern
     let @" = l:saved_reg
 endfunction
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Personalizations (TODO, merge duplicates with above)
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Highlight the line on entering insert mode, turn it off on returning to
-" normal mode
-autocmd InsertEnter * set cursorline
-autocmd InsertLeave * set nocursorline
-
-" turn on hyrid line numbers (both relative and absolute)
-set number relativenumber
-
-" Automatically trim trailing whitespace on save
-autocmd BufWritePre * %s/\s\+$//e
-
-" Display an incomplete command in the lower right corner of the Vim window,
-" left of the ruler.  For example, when you type '2f', Vim is waiting for you to
-" type the character to find and '2f' is displayed.  When you press 'w' next,
-" the '2fw' command is executed and the displayed '2f' is removed.
-set showcmd
-
-" 1 tab == 2 spaces
-set shiftwidth=2
-set tabstop=2
-
-" Set 10 lines to the cursor - when moving vertically using j/k
-set so=10
-
-" Open help files in a vertical split by default
-autocmd FileType help wincmd L
-
-" Set timeout len to 1000 ms
-set tm=1000
-
-" Turn off audio error bell
-set belloff=all
-
-" Unset space and ctrl space as search (from vimrcs/basic.vim)
-unmap <space>
-unmap <C-space>
-
-" https://vim.fandom.com/wiki/Moving_lines_up_or_down
-" ,j and ,k to move lines up and down
-nnoremap <leader>j :m .+1<CR>==
-nnoremap <leader>k :m .-2<CR>==
-inoremap <leader>j <Esc>:m .+1<CR>==gi
-inoremap <leader>k <Esc>:m .-2<CR>==gi
-vnoremap <leader>j :m '>+1<CR>gv=gv
-vnoremap <leader>k :m '<-2<CR>gv=gv
-
-let maplocalleader = "\\"
 
