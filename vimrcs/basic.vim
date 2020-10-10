@@ -1,14 +1,4 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Maintainer: 
-"       Amir Salihefendic — @amix3k
-"
-" Awesome_version:
-"       Get this config, nice color schemes and lots of plugins!
-"
-"       Install the awesome version from:
-"
-"           https://github.com/amix/vimrc
-"
 " Sections:
 "    -> General
 "    -> VIM user interface
@@ -23,6 +13,7 @@
 "    -> Spell checking
 "    -> Misc
 "    -> Helper functions
+"    -> Personalizations
 "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
@@ -48,7 +39,7 @@ let mapleader = ","
 " Fast saving
 nmap <leader>w :w!<cr>
 
-" :W sudo saves the file 
+" :W sudo saves the file
 " (useful for handling the permission-denied error)
 command! W execute 'w !sudo tee % > /dev/null' <bar> edit!
 
@@ -60,7 +51,7 @@ command! W execute 'w !sudo tee % > /dev/null' <bar> edit!
 set so=7
 
 " Avoid garbled characters in Chinese language windows OS
-let $LANG='en' 
+let $LANG='en'
 set langmenu=en
 source $VIMRUNTIME/delmenu.vim
 source $VIMRUNTIME/menu.vim
@@ -92,23 +83,23 @@ set whichwrap+=<,>,h,l
 " Ignore case when searching
 set ignorecase
 
-" When searching try to be smart about cases 
+" When searching try to be smart about cases
 set smartcase
 
 " Highlight search results
 set hlsearch
 
 " Makes search act like search in modern browsers
-set incsearch 
+set incsearch
 
 " Don't redraw while executing macros (good performance config)
-set lazyredraw 
+set lazyredraw
 
 " For regular expressions turn magic on
 set magic
 
 " Show matching brackets when text indicator is over them
-set showmatch 
+set showmatch
 " How many tenths of a second to blink when matching brackets
 set mat=2
 
@@ -132,7 +123,7 @@ set foldcolumn=1
 " => Colors and Fonts
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Enable syntax highlighting
-syntax enable 
+syntax enable
 
 " Enable 256 colors palette in Gnome Terminal
 if $COLORTERM == 'gnome-terminal'
@@ -230,8 +221,8 @@ map <leader>h :bprevious<cr>
 map <leader>tn :tabnew<cr>
 map <leader>to :tabonly<cr>
 map <leader>tc :tabclose<cr>
-map <leader>tm :tabmove 
-map <leader>t<leader> :tabnext 
+map <leader>tm :tabmove
+map <leader>t<leader> :tabnext
 
 " Let 'tl' toggle between this and the last accessed tab
 let g:lasttab = 1
@@ -246,7 +237,7 @@ map <leader>te :tabedit <C-r>=expand("%:p:h")<cr>/
 " Switch CWD to the directory of the open buffer
 map <leader>cd :cd %:p:h<cr>:pwd<cr>
 
-" Specify the behavior when switching between buffers 
+" Specify the behavior when switching between buffers
 try
   set switchbuf=useopen,usetab,newtab
   set stal=2
@@ -363,7 +354,7 @@ endfunction
 
 function! CmdLine(str)
     call feedkeys(":" . a:str)
-endfunction 
+endfunction
 
 function! VisualSelection(direction, extra_filter) range
     let l:saved_reg = @"
@@ -381,3 +372,55 @@ function! VisualSelection(direction, extra_filter) range
     let @/ = l:pattern
     let @" = l:saved_reg
 endfunction
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Personalizations (TODO, merge duplicates with above)
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Highlight the line on entering insert mode, turn it off on returning to
+" normal mode
+autocmd InsertEnter * set cursorline
+autocmd InsertLeave * set nocursorline
+
+" turn on hyrid line numbers (both relative and absolute)
+set number relativenumber
+
+" Automatically trim trailing whitespace on save
+autocmd BufWritePre * %s/\s\+$//e
+
+" Display an incomplete command in the lower right corner of the Vim window,
+" left of the ruler.  For example, when you type '2f', Vim is waiting for you to
+" type the character to find and '2f' is displayed.  When you press 'w' next,
+" the '2fw' command is executed and the displayed '2f' is removed.
+set showcmd
+
+" 1 tab == 2 spaces
+set shiftwidth=2
+set tabstop=2
+
+" Set 10 lines to the cursor - when moving vertically using j/k
+set so=10
+
+" Open help files in a vertical split by default
+autocmd FileType help wincmd L
+
+" Set timeout len to 1000 ms
+set tm=1000
+
+" Turn off audio error bell
+set belloff=all
+
+" Unset space and ctrl space as search (from vimrcs/basic.vim)
+unmap <space>
+unmap <C-space>
+
+" https://vim.fandom.com/wiki/Moving_lines_up_or_down
+" ,j and ,k to move lines up and down
+nnoremap <leader>j :m .+1<CR>==
+nnoremap <leader>k :m .-2<CR>==
+inoremap <leader>j <Esc>:m .+1<CR>==gi
+inoremap <leader>k <Esc>:m .-2<CR>==gi
+vnoremap <leader>j :m '>+1<CR>gv=gv
+vnoremap <leader>k :m '<-2<CR>gv=gv
+
+let maplocalleader = "\\"
+
