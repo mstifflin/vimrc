@@ -1,17 +1,9 @@
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Important:
-"       This requires that you install https://github.com/amix/vimrc !
-"
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-
 """"""""""""""""""""""""""""""
 " => Load pathogen paths
 """"""""""""""""""""""""""""""
 let s:vim_runtime = expand('<sfile>:p:h')."/.."
 call pathogen#infect(s:vim_runtime.'/sources_forked/{}')
 call pathogen#infect(s:vim_runtime.'/sources_non_forked/{}')
-call pathogen#infect(s:vim_runtime.'/my_sources/{}')
 
 call pathogen#helptags()
 
@@ -19,10 +11,17 @@ call pathogen#helptags()
 """"""""""""""""""""""""""""""
 " => bufExplorer plugin
 """"""""""""""""""""""""""""""
-let g:bufExplorerDefaultHelp=0
+" Display default help
+let g:bufExplorerDefaultHelp=1
+" Sort by most recently used
+let g:bufExplorerSortBy='mru'
+" Do not show unlisted buffers.
+let g:bufExplorerShowUnlisted=0
+" Do not 'No Name' buffers.
+let g:bufExplorerShowNoName=0
+
 let g:bufExplorerShowRelativePath=1
 let g:bufExplorerFindActive=1
-let g:bufExplorerSortBy='name'
 map <leader>o :BufExplorer<cr>
 
 
@@ -58,7 +57,7 @@ map <leader>b :CtrlPBuffer<cr>
 map <leader>f :CtrlPMRU<CR>
 
 let g:ctrlp_max_height = 20
-let g:ctrlp_custom_ignore = 'node_modules\|^\.DS_Store\|^\.git\|^\.coffee'
+let g:ctrlp_custom_ignore = 'node_modules\|.gen\|gen\|vendor\|go-build\|^\.DS_Store\|^\.git\|^\.coffee'
 
 
 """"""""""""""""""""""""""""""
@@ -85,8 +84,8 @@ set grepprg=/bin/grep\ -nH
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Nerd Tree
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:NERDTreeWinPos = "right"
-let NERDTreeShowHidden=0
+let g:NERDTreeWinPos = "left"
+let NERDTreeShowHidden=1
 let NERDTreeIgnore = ['\.pyc$', '__pycache__']
 let g:NERDTreeWinSize=35
 map <leader>nn :NERDTreeToggle<cr>
@@ -105,26 +104,36 @@ au FileType mako vmap Si S"i${ _(<esc>2f"a) }<esc>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => lightline
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+source ~/.vim_runtime/my_vimrcs/lightline.vim
+
 let g:lightline = {
-      \ 'colorscheme': 'wombat',
-      \ 'active': {
-      \   'left': [ ['mode', 'paste'],
-      \             ['fugitive', 'readonly', 'filename', 'modified'] ],
-      \   'right': [ [ 'lineinfo' ], ['percent'] ]
-      \ },
-      \ 'component': {
-      \   'readonly': '%{&filetype=="help"?"":&readonly?"🔒":""}',
-      \   'modified': '%{&filetype=="help"?"":&modified?"+":&modifiable?"":"-"}',
-      \   'fugitive': '%{exists("*FugitiveHead")?FugitiveHead():""}'
-      \ },
-      \ 'component_visible_condition': {
-      \   'readonly': '(&filetype!="help"&& &readonly)',
-      \   'modified': '(&filetype!="help"&&(&modified||!&modifiable))',
-      \   'fugitive': '(exists("*FugitiveHead") && ""!=FugitiveHead())'
-      \ },
-      \ 'separator': { 'left': ' ', 'right': ' ' },
-      \ 'subseparator': { 'left': ' ', 'right': ' ' }
-      \ }
+    \ 'colorscheme': 'TiffCustomPaperColor',
+    \ 'active': {
+    \   'left': [ ['mode', 'paste'],
+    \             ['gitbranch', 'readonly', 'filepath', 'modified'] ],
+    \   'right': [ ['filetype'], [ 'lineinfo' ], ['percent'] ]
+    \ },
+    \ 'inactive': {
+    \   'left': [ ['mode', 'paste'],
+    \             ['gitbranch', 'readonly', 'filepath', 'modified']],
+    \   'right': [ ['filetype'], [ 'lineinfo' ], ['percent'] ]
+    \ },
+    \ 'component': {
+    \   'readonly': '%{&filetype=="help"?"":&readonly?"🔒":""}',
+    \   'modified': '%{&filetype=="help"?"":&modified?"+":&modifiable?"":"-"}',
+    \   'gitbranch': '%{exists("*FugitiveHead")?FugitiveHead():""}',
+    \   'filepath': '%f',
+    \   'filetype': '%Y',
+    \ },
+    \ 'component_visible_condition': {
+    \   'readonly': '(&filetype!="help"&& &readonly)',
+    \   'modified': '(&filetype!="help"&&(&modified||!&modifiable))',
+    \   'gitbranch': '(exists("*FugitiveHead") && ""!=FugitiveHead())'
+    \ },
+    \ 'separator': { 'left': ' ', 'right': ' ' },
+    \ 'subseparator': { 'left': ' ', 'right': ' ' }
+    \ }
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Vimroom
@@ -159,3 +168,70 @@ let g:ale_lint_on_enter = 0
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:gitgutter_enabled=0
 nnoremap <silent> <leader>d :GitGutterToggle<cr>
+" Avoid the problem where grep produces non-plain output; e.g. ANSI escape codes or colours.
+let g:gitgutter_grep=''
+
+
+""""""""""""""""""""""""""""""
+" => Deoplete
+""""""""""""""""""""""""""""""
+" Use deoplete.
+" This has been moved to extended vim since there is a conditional for this config value
+" let g:deoplete#enable_at_startup = 1
+
+" The default key for autocompletion is <Ctrl-x><Ctrl-o>
+" and <Ctrl-P> for going up in the list and <Ctrl-N> for going down.
+" deoplete tab-complete
+" From https://www.gregjs.com/vim/2016/configuring-the-deoplete-asynchronous-keyword-completion-plugin-with-tern-for-vim/
+inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
+
+call deoplete#custom#option({
+  \ 'max_list': 20,
+  \ 'on_insert_enter': v:false,
+  \ 'auto_complete_delay': 5,
+  \ })
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => vim-visual-multi
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" https://github.com/mg979/vim-visual-multi/wiki/Mappings#full-mappings-list
+let g:VM_maps = {}
+let g:VM_maps['Find Under']         = '<C-s>'           " replace C-n
+let g:VM_maps['Find Subword Under'] = '<C-s>'           " replace visual C-n
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => vim-orgmode
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+packloadall
+silent! helptags ALL
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => PaperColor (color scheme)
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" https://github.com/NLKNguyen/papercolor-theme/blob/master/DESIGN.md
+" Theme options must be defined before setting colorscheme to PaperColor
+let g:PaperColor_Theme_Options = {
+    \   'theme': {
+    \       'default.light': {
+    \           'override' : {
+    \               'color00': ['#ffffff', ''],
+    \               'color03': ['#7F0000', ''],
+    \               'color05': ['#228B22', ''],
+    \               'search_fg': ['#000000', ''],
+    \               'search_bg': ['#f7c0d4', ''],
+    \           }
+    \       },
+    \       'default.dark': {
+    \           'override' : {
+    \               'color05': ['#00E500', ''],
+    \               'color07': ['#ffffff', ''],
+    \               'search_fg': ['#000000', ''],
+    \               'search_bg': ['#f7c0d4', ''],
+    \               'linenumber_fg': ['#ffffff', ''],
+    \           }
+    \       }
+    \   }
+    \ }
