@@ -15,6 +15,16 @@ from os import path
 
 # --- Globals ----------------------------------------------
 PLUGINS = """
+vim-go https://github.com/fatih/vim-go
+papercolor-theme https://github.com/NLKNguyen/papercolor-theme.git
+deoplete https://github.com/Shougo/deoplete.nvim.git
+nvim-yarp https://github.com/roxma/nvim-yarp.git
+vim-hug-neovim-rpc https://github.com/roxma/vim-hug-neovim-rpc.git
+vim-toml https://github.com/cespare/vim-toml.git
+vim-thrift https://github.com/solarnz/thrift.vim.git
+vim-visual-multi https://github.com/mg979/vim-visual-multi.git
+vim-orgmode https://github.com/jceb/vim-orgmode
+vim-speeddating https://github.com/tpope/vim-speeddating
 auto-pairs https://github.com/jiangmiao/auto-pairs
 ale https://github.com/w0rp/ale
 vim-yankstack https://github.com/maxbrunsfeld/vim-yankstack
@@ -28,11 +38,8 @@ open_file_under_cursor.vim https://github.com/amix/open_file_under_cursor.vim
 tlib https://github.com/vim-scripts/tlib
 vim-addon-mw-utils https://github.com/MarcWeber/vim-addon-mw-utils
 vim-bundle-mako https://github.com/sophacles/vim-bundle-mako
-vim-coffee-script https://github.com/kchmck/vim-coffee-script
-vim-colors-solarized https://github.com/altercation/vim-colors-solarized
 vim-indent-object https://github.com/michaeljsmith/vim-indent-object
 vim-less https://github.com/groenewege/vim-less
-vim-pyte https://github.com/therubymug/vim-pyte
 vim-snipmate https://github.com/garbas/vim-snipmate
 vim-snippets https://github.com/honza/vim-snippets
 vim-surround https://github.com/tpope/vim-surround
@@ -49,16 +56,10 @@ vim-pug https://github.com/digitaltoad/vim-pug
 lightline.vim https://github.com/itchyny/lightline.vim
 lightline-ale https://github.com/maximbaz/lightline-ale
 vim-abolish https://github.com/tpope/tpope-vim-abolish
-rust.vim https://github.com/rust-lang/rust.vim
 vim-markdown https://github.com/plasticboy/vim-markdown
 vim-gist https://github.com/mattn/vim-gist
-vim-ruby https://github.com/vim-ruby/vim-ruby
-typescript-vim https://github.com/leafgarland/typescript-vim
-vim-javascript https://github.com/pangloss/vim-javascript
 vim-python-pep8-indent https://github.com/Vimjas/vim-python-pep8-indent
 """.strip()
-# vim-go https://github.com/fatih/vim-go
-# papercolor-theme https://github.com/NLKNguyen/papercolor-theme.git
 
 GITHUB_ZIP = "%s/archive/master.zip"
 
