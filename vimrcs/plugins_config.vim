@@ -104,7 +104,7 @@ au FileType mako vmap Si S"i${ _(<esc>2f"a) }<esc>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => lightline
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-source ~/.vim_runtime/my_vimrcs/lightline.vim
+source ~/.vim_runtime/vimrcs/lightline.vim
 
 let g:lightline = {
     \ 'colorscheme': 'TiffCustomPaperColor',

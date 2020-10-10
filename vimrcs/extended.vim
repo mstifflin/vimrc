@@ -1,11 +1,4 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Important: 
-"       This requries that you install https://github.com/amix/vimrc !
-"
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => GUI related
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Set font according to system
@@ -28,8 +21,16 @@ set guioptions-=l
 set guioptions-=L
 
 " Colorscheme
-set background=dark
-colorscheme peaksea
+colorscheme PaperColor
+set background=light
+
+" Must define background after setting color scheme, else
+" it doesn't take overriden configs into account
+" if 5 < strftime('%H') && strftime('%H') < 21
+"     set background=light
+" else
+"     set background=dark
+" end if
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -40,7 +41,7 @@ autocmd! bufwritepost ~/.vim_runtime/my_configs.vim source ~/.vim_runtime/my_con
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Turn persistent undo on 
+" => Turn persistent undo on
 "    means that you can undo even when you close a buffer/VIM
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 try
@@ -60,7 +61,7 @@ cno $j e ./
 cno $c e <C-\>eCurrentFileDir("e")<cr>
 
 " $q is super useful when browsing on the command line
-" it deletes everything until the last slash 
+" it deletes everything until the last slash
 cno $q <C-\>eDeleteTillSlash()<cr>
 
 " Bash like keys for the command line
@@ -107,6 +108,16 @@ iab xdate <C-r>=strftime("%d/%m/%y %H:%M:%S")<cr>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 autocmd FileType css set omnifunc=csscomplete#CompleteCSS
 
+" Use Deoplete for Go files
+call deoplete#custom#option('omni_patterns', { 'go': '[^. *\t]\.\w*'  })
+
+" Conditional needed to be set last/in extended?
+" Didn't work when it was in plugins_config
+" Use deoplete if python3 (hard dependency of deoplete) is available
+if has('python3')
+  let g:deoplete#enable_at_startup = 1
+endif
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Ack searching and cope displaying
@@ -121,7 +132,7 @@ endif
 vnoremap <silent> gv :call VisualSelection('gv', '')<CR>
 
 " Open Ack and put the cursor in the right position
-map <leader>g :Ack 
+map <leader>g :Ack
 
 " When you press <leader>r you can search and replace the selected text
 vnoremap <silent> <leader>r :call VisualSelection('replace', '')<CR>
@@ -164,7 +175,7 @@ func! DeleteTillSlash()
         else
             let g:cmd_edited = substitute(g:cmd, "\\(.*\[/\]\\).*/", "\\1", "")
         endif
-    endif   
+    endif
 
     return g:cmd_edited
 endfunc
@@ -172,3 +183,4 @@ endfunc
 func! CurrentFileDir(cmd)
     return a:cmd . " " . expand("%:p:h") . "/"
 endfunc
+
