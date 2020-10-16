@@ -1,3 +1,5 @@
+#!/bin/zsh
+
 # vim-go https://github.com/fatih/vim-go
 # papercolor-theme https://github.com/NLKNguyen/papercolor-theme.git
 # deoplete https://github.com/Shougo/deoplete.nvim.git
@@ -8,9 +10,9 @@
 # vim-visual-multi https://github.com/mg979/vim-visual-multi.git
 
 # Deoplete dependency
-if [[ $(pip3 list | grep pynvim) = "" ]]; then
-  pip3 install --user pynvim
-else
+if [[ $(pip3 list | grep pynvim) != "" ]]; then
   echo "pynvim already installed"
+else
+  pip3 install --user pynvim
 fi
 

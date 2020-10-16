@@ -1,6 +1,6 @@
 #!/bin/sh
 
-sh ~/.vim_runtime/install_my_plugins.sh
-sh ~/.vim_runtime/install_awesome_vimrc.sh
+~/.vim_runtime/install_my_plugins.sh
+~/.vim_runtime/install_awesome_vimrc.sh
 
 
