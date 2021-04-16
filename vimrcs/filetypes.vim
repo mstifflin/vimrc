@@ -76,6 +76,9 @@ autocmd FileType go nmap <leader>T :GoTest!<cr>
 autocmd FileType go nmap <leader>c :GoCoverageToggle!<cr>
 
 let g:go_fmt_command = "goimports"
+let g:go_fmt_options = {
+    \ 'goimports': '-local code.uber.internal,thriftrw/code.uber.internal,thrift/code.uber.internal,gogoproto/code.uber.internal,go.uber.org,golang.org,github.com',
+    \ }
 let g:go_highlight_types = 1
 let g:go_highlight_fields = 1
 let g:go_highlight_functions = 1
