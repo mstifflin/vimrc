@@ -31,6 +31,11 @@ vim-yankstack https://github.com/maxbrunsfeld/vim-yankstack
 ack.vim https://github.com/mileszs/ack.vim
 bufexplorer https://github.com/jlanzarotta/bufexplorer
 ctrlp.vim https://github.com/ctrlpvim/ctrlp.vim
+vim-coffee-script https://github.com/kchmck/vim-coffee-script
+rust.vim https://github.com/rust-lang/rust.vim
+vim-ruby https://github.com/vim-ruby/vim-ruby
+typescript-vim https://github.com/leafgarland/typescript-vim
+vim-javascript https://github.com/pangloss/vim-javascript
 mayansmoke https://github.com/vim-scripts/mayansmoke
 nerdtree https://github.com/scrooloose/nerdtree
 nginx.vim https://github.com/chr4/nginx.vim
@@ -40,8 +45,6 @@ vim-addon-mw-utils https://github.com/MarcWeber/vim-addon-mw-utils
 vim-bundle-mako https://github.com/sophacles/vim-bundle-mako
 vim-indent-object https://github.com/michaeljsmith/vim-indent-object
 vim-less https://github.com/groenewege/vim-less
-vim-snipmate https://github.com/garbas/vim-snipmate
-vim-snippets https://github.com/honza/vim-snippets
 vim-surround https://github.com/tpope/vim-surround
 vim-expand-region https://github.com/terryma/vim-expand-region
 vim-fugitive https://github.com/tpope/vim-fugitive
@@ -59,6 +62,8 @@ vim-abolish https://github.com/tpope/tpope-vim-abolish
 vim-markdown https://github.com/plasticboy/vim-markdown
 vim-gist https://github.com/mattn/vim-gist
 vim-python-pep8-indent https://github.com/Vimjas/vim-python-pep8-indent
+vim-snipmate https://github.com/garbas/vim-snipmate
+vim-snippets https://github.com/honza/vim-snippets
 """.strip()
 
 GITHUB_ZIP = "%s/archive/master.zip"
