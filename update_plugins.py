@@ -64,6 +64,7 @@ vim-gist https://github.com/mattn/vim-gist
 vim-python-pep8-indent https://github.com/Vimjas/vim-python-pep8-indent
 vim-snipmate https://github.com/garbas/vim-snipmate
 vim-snippets https://github.com/honza/vim-snippets
+context.vim https://github.com/wellle/context.vim.git
 """.strip()
 
 GITHUB_ZIP = "%s/archive/master.zip"
