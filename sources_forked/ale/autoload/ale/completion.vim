@@ -995,9 +995,13 @@ endfunction
 
 function! ale#completion#HandleUserData(completed_item) abort
     let l:user_data_json = get(a:completed_item, 'user_data', '')
-    let l:user_data = !empty(l:user_data_json)
-    \   ? json_decode(l:user_data_json)
-    \   : v:null
+    try
+        let l:user_data = !empty(l:user_data_json)
+        \   ? json_decode(l:user_data_json)
+        \   : v:null
+    catch
+        return
+    endtry
 
     if type(l:user_data) isnot v:t_dict
     \|| get(l:user_data, '_ale_completion_item', 0) isnot 1
@@ -1027,11 +1031,11 @@ function! ale#completion#Done() abort
     let s:last_done_pos = getpos('.')[1:2]
 endfunction
 
-augroup ALECompletionActions
-    autocmd!
+" augroup ALECompletionActions
+"     autocmd!
 
-    autocmd CompleteDone * call ale#completion#HandleUserData(v:completed_item)
-augroup END
+"     autocmd CompleteDone * call ale#completion#HandleUserData(v:completed_item)
+" augroup END
 
 function! s:Setup(enabled) abort
     augroup ALECompletionGroup

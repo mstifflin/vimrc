@@ -26,7 +26,6 @@ vim-visual-multi https://github.com/mg979/vim-visual-multi.git
 vim-orgmode https://github.com/jceb/vim-orgmode
 vim-speeddating https://github.com/tpope/vim-speeddating
 auto-pairs https://github.com/jiangmiao/auto-pairs
-ale https://github.com/w0rp/ale
 vim-yankstack https://github.com/maxbrunsfeld/vim-yankstack
 ack.vim https://github.com/mileszs/ack.vim
 bufexplorer https://github.com/jlanzarotta/bufexplorer
@@ -66,6 +65,9 @@ vim-snipmate https://github.com/garbas/vim-snipmate
 vim-snippets https://github.com/honza/vim-snippets
 context.vim https://github.com/wellle/context.vim.git
 """.strip()
+
+# Forked, commented out autocompletion parts
+# ale https://github.com/w0rp/ale
 
 GITHUB_ZIP = "%s/archive/master.zip"
 
