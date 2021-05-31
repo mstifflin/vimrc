@@ -130,6 +130,9 @@ set number relativenumber
 " Open help files in a vertical split by default
 autocmd FileType help wincmd L
 
+" Installed fzf (fuzzy file finder) via git
+" https://github.com/junegunn/fzf/blob/master/README-VIM.md
+set rtp+=~/.fzf
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Colors and Fonts
