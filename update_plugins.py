@@ -28,7 +28,6 @@ vim-speeddating https://github.com/tpope/vim-speeddating
 auto-pairs https://github.com/jiangmiao/auto-pairs
 vim-yankstack https://github.com/maxbrunsfeld/vim-yankstack
 bufexplorer https://github.com/jlanzarotta/bufexplorer
-ctrlp.vim https://github.com/ctrlpvim/ctrlp.vim
 vim-coffee-script https://github.com/kchmck/vim-coffee-script
 rust.vim https://github.com/rust-lang/rust.vim
 vim-ruby https://github.com/vim-ruby/vim-ruby
@@ -67,8 +66,10 @@ context.vim https://github.com/wellle/context.vim.git
 
 # Forked, commented out autocompletion parts
 # ale https://github.com/w0rp/ale
+
 # Forked, changed Rg flags sent to command line for exact string matching (never use regex)
 # fzf.vim https://github.com/junegunn/fzf.vim.git
+
 GITHUB_ZIP = "%s/archive/master.zip"
 
 SOURCE_DIR = path.join(path.dirname(__file__), "sources_non_forked")
