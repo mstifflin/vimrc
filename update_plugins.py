@@ -27,7 +27,6 @@ vim-orgmode https://github.com/jceb/vim-orgmode
 vim-speeddating https://github.com/tpope/vim-speeddating
 auto-pairs https://github.com/jiangmiao/auto-pairs
 vim-yankstack https://github.com/maxbrunsfeld/vim-yankstack
-ack.vim https://github.com/mileszs/ack.vim
 bufexplorer https://github.com/jlanzarotta/bufexplorer
 ctrlp.vim https://github.com/ctrlpvim/ctrlp.vim
 vim-coffee-script https://github.com/kchmck/vim-coffee-script
@@ -64,12 +63,12 @@ vim-python-pep8-indent https://github.com/Vimjas/vim-python-pep8-indent
 vim-snipmate https://github.com/garbas/vim-snipmate
 vim-snippets https://github.com/honza/vim-snippets
 context.vim https://github.com/wellle/context.vim.git
-fzf.vim https://github.com/junegunn/fzf.vim.git
 """.strip()
 
 # Forked, commented out autocompletion parts
 # ale https://github.com/w0rp/ale
-
+# Forked, changed Rg flags sent to command line for exact string matching (never use regex)
+# fzf.vim https://github.com/junegunn/fzf.vim.git
 GITHUB_ZIP = "%s/archive/master.zip"
 
 SOURCE_DIR = path.join(path.dirname(__file__), "sources_non_forked")
