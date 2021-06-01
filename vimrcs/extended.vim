@@ -123,9 +123,9 @@ endif
 " => Text + file searching and cope displaying
 "    requires ack.vim and fzf.vim
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Use the the_silver_searcher if possible (much faster than Ack)
-if executable('ag')
-  let g:ackprg = 'ag --vimgrep --smart-case'
+" Use the ripgrep if possible (ripgrep is faster than the silver searcher, silver searcher is faster than Ack)
+if executable('rg')
+  let g:ackprg = 'rg --vimgrep --smart-case'
 endif
 
 " When you press gv you Ack after the selected text
