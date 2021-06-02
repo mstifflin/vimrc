@@ -126,10 +126,15 @@ endif
 " Use the ripgrep if possible (ripgrep is faster than the silver searcher, silver searcher is faster than Ack)
 if executable('rg')
   let g:ackprg = 'rg --vimgrep --smart-case'
+elseif executable('ag')
+  let g:ackprg = 'ag --vimgrep --smart-case'
 endif
 
-" When you press gv you Ack after the selected text
+" When you press gv you Ack after the selected text, excluding test files
 vnoremap <silent> gv :call VisualSelection('gv', '')<CR>
+
+" When you press gV you Ack after the selected text, including test files
+vnoremap <silent> ga :call VisualSelection('ga', '')<CR>
 
 " Open Ack and put the cursor in the right position
 map <leader>g :Ack
