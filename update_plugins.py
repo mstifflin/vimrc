@@ -67,6 +67,7 @@ fzf.vim https://github.com/junegunn/fzf.vim.git
 """.strip()
 
 # Forked, commented out autocompletion parts
+# https://github.com/dense-analysis/ale/issues/3373
 # ale https://github.com/w0rp/ale
 
 GITHUB_ZIP = "%s/archive/master.zip"
