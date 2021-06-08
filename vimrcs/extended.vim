@@ -123,6 +123,10 @@ endif
 " => Text + file searching and cope displaying
 "    requires ack.vim and fzf.vim
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Installed fzf (fuzzy file finder) via git
+" https://github.com/junegunn/fzf/blob/master/README-VIM.md
+set rtp+=~/.fzf
+
 " Use the ripgrep if possible (ripgrep is faster than the silver searcher, silver searcher is faster than Ack)
 if executable('rg')
   let g:ackprg = 'rg --vimgrep --smart-case'
