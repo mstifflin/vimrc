@@ -170,9 +170,9 @@ let g:gitgutter_grep=''
 inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 
 call deoplete#custom#option({
-  \ 'max_list': 20,
+  \ 'max_list': 5,
   \ 'on_insert_enter': v:false,
-  \ 'auto_complete_delay': 5,
+  \ 'auto_complete_delay': 10,
   \ })
 
 
