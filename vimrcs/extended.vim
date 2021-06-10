@@ -104,30 +104,19 @@ iab xdate <C-r>=strftime("%d/%m/%y %H:%M:%S")<cr>
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Omni complete functions (depends on deoplete.vim)
+" => Omni complete functions
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 autocmd FileType css set omnifunc=csscomplete#CompleteCSS
 
 " Use Deoplete for Go files
-call deoplete#custom#option({
-  \ 'omni_patterns': { 'go': '[^. *\t]\.\w*'  },
-  \ 'max_list': 5,
-  \ 'auto_complete_delay': 10,
-  \ })
+call deoplete#custom#option('omni_patterns', { 'go': '[^. *\t]\.\w*'  })
 
-"  \ 'on_insert_enter': v:false,
 " Conditional needed to be set last/in extended?
 " Didn't work when it was in plugins_config
 " Use deoplete if python3 (hard dependency of deoplete) is available
 if has('python3')
   let g:deoplete#enable_at_startup = 1
 endif
-
-" The default key for autocompletion is <Ctrl-x><Ctrl-o>
-" and <Ctrl-P> for going up in the list and <Ctrl-N> for going down.
-" deoplete tab-complete
-" From https://www.gregjs.com/vim/2016/configuring-the-deoplete-asynchronous-keyword-completion-plugin-with-tern-for-vim/
-inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

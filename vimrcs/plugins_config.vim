@@ -156,6 +156,26 @@ nnoremap <silent> <leader>d :GitGutterToggle<cr>
 let g:gitgutter_grep=''
 
 
+""""""""""""""""""""""""""""""
+" => Deoplete
+""""""""""""""""""""""""""""""
+" Use deoplete.
+" This has been moved to extended vim since there is a conditional for this config value
+" let g:deoplete#enable_at_startup = 1
+
+" The default key for autocompletion is <Ctrl-x><Ctrl-o>
+" and <Ctrl-P> for going up in the list and <Ctrl-N> for going down.
+" deoplete tab-complete
+" From https://www.gregjs.com/vim/2016/configuring-the-deoplete-asynchronous-keyword-completion-plugin-with-tern-for-vim/
+inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
+
+call deoplete#custom#option({
+  \ 'max_list': 5,
+  \ 'on_insert_enter': v:false,
+  \ 'auto_complete_delay': 10,
+  \ })
+
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => vim-visual-multi
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
