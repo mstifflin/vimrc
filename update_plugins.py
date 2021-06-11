@@ -17,8 +17,6 @@ from os import path
 PLUGINS = """
 vim-go https://github.com/fatih/vim-go
 papercolor-theme https://github.com/NLKNguyen/papercolor-theme.git
-deoplete https://github.com/Shougo/deoplete.nvim.git
-nvim-yarp https://github.com/roxma/nvim-yarp.git
 vim-hug-neovim-rpc https://github.com/roxma/vim-hug-neovim-rpc.git
 vim-toml https://github.com/cespare/vim-toml.git
 vim-thrift https://github.com/solarnz/thrift.vim.git

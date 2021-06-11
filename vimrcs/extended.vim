@@ -108,16 +108,6 @@ iab xdate <C-r>=strftime("%d/%m/%y %H:%M:%S")<cr>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 autocmd FileType css set omnifunc=csscomplete#CompleteCSS
 
-" Use Deoplete for Go files
-" call deoplete#custom#option('omni_patterns', { 'go': '[^. *\t]\.\w*'  })
-
-" Conditional needed to be set last/in extended?
-" Didn't work when it was in plugins_config
-" Use deoplete if python3 (hard dependency of deoplete) is available
-" if has('python3')
-"   let g:deoplete#enable_at_startup = 1
-" endif
-
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Conquer of Completion (coc.nvim)
