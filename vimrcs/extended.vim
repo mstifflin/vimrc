@@ -112,6 +112,9 @@ autocmd FileType css set omnifunc=csscomplete#CompleteCSS
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Conquer of Completion (coc.nvim)
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Set global list of CoC extensions
+let g:coc_global_extensions = ['coc-json', 'coc-go', 'coc-python', 'coc-yaml', 'coc-thrift-syntax-support']
+
 " Set internal encoding of vim, not needed on neovim, since coc.nvim using some
 " unicode characters in the file autoload/float.vim
 set encoding=utf-8
