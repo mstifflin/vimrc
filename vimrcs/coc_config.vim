@@ -1,6 +1,9 @@
+"
 " Setting up npm if it's having trouble resolving to the public registry
+"
 " https://docs.npmjs.com/configuring-your-registry-settings-as-an-npm-enterprise-user
 " https://docs.npmjs.com/cli/v7/using-npm/registry
+" $ npm i npmrc -g
 " $ npmrc # initialize npmrc profiles
 " $ npmrc default
 " Current .npmrc (/home/user/.npmrc) is already "default" (/home/user/.npmrcs/default)

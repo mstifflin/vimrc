@@ -1,8 +1,9 @@
 #!/bin/sh
 
-# Only needed for vim? Not needed for neovim, I think
-# ~/.vim_runtime/install_deoplate_dependencies.sh
+# vim
 ~/.vim_runtime/install_awesome_vimrc.sh
+
+# nvim related
 mkdir -p ~/.config/nvim
 
 if [ ! -e ~/.config/nvim/init.vim ]; then
