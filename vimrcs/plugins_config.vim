@@ -109,6 +109,9 @@ let g:lightline = {
     \   'filepath': '%f',
     \   'filetype': '%Y',
     \ },
+  	\ 'component_function': {
+  	\   'cocstatus': 'coc#status'
+  	\ },
     \ 'component_visible_condition': {
     \   'readonly': '(&filetype!="help"&& &readonly)',
     \   'modified': '(&filetype!="help"&&(&modified||!&modifiable))',
@@ -118,6 +121,7 @@ let g:lightline = {
     \ 'subseparator': { 'left': ' ', 'right': ' ' }
     \ }
 
+autocmd User CocStatusChange,CocDiagnosticChange call lightline#update()
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Vimroom

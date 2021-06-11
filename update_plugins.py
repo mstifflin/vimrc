@@ -65,6 +65,7 @@ vim-snippets https://github.com/honza/vim-snippets
 context.vim https://github.com/wellle/context.vim.git
 fzf.vim https://github.com/junegunn/fzf.vim.git
 rainbow https://github.com/luochen1990/rainbow.git
+coc.nvim https://github.com/neoclide/coc.nvim.git
 """.strip()
 
 # Forked, commented out autocompletion parts
