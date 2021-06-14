@@ -94,18 +94,17 @@ let g:lightline = {
     \ 'colorscheme': 'TiffCustomPaperColor',
     \ 'active': {
     \   'left': [ ['mode', 'paste'],
-    \             ['gitbranch', 'readonly', 'filepath', 'modified'] ],
+    \             ['readonly', 'filepath', 'modified'] ],
     \   'right': [ ['filetype'], [ 'lineinfo' ], ['percent'] ]
     \ },
     \ 'inactive': {
     \   'left': [ ['mode', 'paste'],
-    \             ['gitbranch', 'readonly', 'filepath', 'modified']],
+    \             ['readonly', 'filepath', 'modified']],
     \   'right': [ ['filetype'], [ 'lineinfo' ], ['percent'] ]
     \ },
     \ 'component': {
     \   'readonly': '%{&filetype=="help"?"":&readonly?"🔒":""}',
     \   'modified': '%{&filetype=="help"?"":&modified?"+":&modifiable?"":"-"}',
-    \   'gitbranch': '%{exists("*FugitiveHead")?FugitiveHead():""}',
     \   'filepath': '%f',
     \   'filetype': '%Y',
     \ },
@@ -115,7 +114,6 @@ let g:lightline = {
     \ 'component_visible_condition': {
     \   'readonly': '(&filetype!="help"&& &readonly)',
     \   'modified': '(&filetype!="help"&&(&modified||!&modifiable))',
-    \   'gitbranch': '(exists("*FugitiveHead") && ""!=FugitiveHead())'
     \ },
     \ 'separator': { 'left': ' ', 'right': ' ' },
     \ 'subseparator': { 'left': ' ', 'right': ' ' }
