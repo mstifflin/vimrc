@@ -100,8 +100,9 @@ let g:go_jump_to_error = 0
 let g:go_test_show_name = 1
 
 " Turn off code completion via omnifunc
-" Use coc.vim for this
-let g:go_code_completion_enabled = 0
+" With this off, the annoying autofill is turned off, but
+" smart auto complete is also off.
+" let g:go_code_completion_enabled = 0
 
 " Stop annoying pop up for every gofmt failure
 let g:go_fmt_fail_silently = 1
