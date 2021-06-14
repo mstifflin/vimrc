@@ -25,6 +25,7 @@ vim-orgmode https://github.com/jceb/vim-orgmode
 vim-speeddating https://github.com/tpope/vim-speeddating
 auto-pairs https://github.com/jiangmiao/auto-pairs
 vim-yankstack https://github.com/maxbrunsfeld/vim-yankstack
+ale https://github.com/w0rp/ale
 ack.vim https://github.com/mileszs/ack.vim
 bufexplorer https://github.com/jlanzarotta/bufexplorer
 vim-coffee-script https://github.com/kchmck/vim-coffee-script
