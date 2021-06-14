@@ -65,15 +65,11 @@ context.vim https://github.com/wellle/context.vim.git
 fzf.vim https://github.com/junegunn/fzf.vim.git
 rainbow https://github.com/luochen1990/rainbow.git
 coc.nvim https://github.com/neoclide/coc.nvim.git
-LanguageClient-neovim https://github.com/autozimu/LanguageClient-neovim.git
 """.strip()
 
 # Forked, commented out autocompletion parts
 # https://github.com/dense-analysis/ale/issues/3373
 # ale https://github.com/w0rp/ale
-
-# LanguageClient-neovim may need to run bash install.sh when it updates?
-# https://github.com/autozimu/LanguageClient-neovim/blob/next/INSTALL.md#manual
 
 GITHUB_ZIP = "%s/archive/master.zip"
 
