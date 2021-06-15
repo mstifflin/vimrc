@@ -46,8 +46,13 @@ map <leader>e :e! ~/.vim_runtime/vimrcs/basic.vim<cr>
 "    means that you can undo even when you close a buffer/VIM
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 try
+  if has("nvim-0.5.0") || has("patch-8.1.1564")
+    set undodir=~/.vim_runtime/temp_dirs/undodir_nvim
+    set undofile
+  else
     set undodir=~/.vim_runtime/temp_dirs/undodir
     set undofile
+  endif
 catch
 endtry
 
