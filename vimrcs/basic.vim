@@ -147,8 +147,6 @@ try
 catch
 endtry
 
-set background=dark
-
 " Set extra options when running in GUI mode
 if has("gui_running")
     set guioptions-=T
