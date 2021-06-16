@@ -71,25 +71,24 @@ endfunction
 
 " BinPath returns the binary path of installed go tools.
 function! go#path#BinPath() abort
-  let l:bin_path = go#config#BinPath()
-  if l:bin_path isnot ""
-    return l:bin_path
+  let bin_path = go#config#BinPath()
+  if bin_path != ""
+    return bin_path
   endif
 
-  " check if our global custom path is set, if not check if GOBIN is set so
+  " check if our global custom path is set, if not check if $GOBIN is set so
   " we can use it, otherwise use default GOPATH
-  let l:bin_path = go#util#env('gobin')
-  if l:bin_path isnot ''
-    let l:bin_path = $GOBIN
+  if $GOBIN != ""
+    let bin_path = $GOBIN
   else
-    let l:go_paths = split(go#path#Default(), go#util#PathListSep())
-    if len(l:go_paths) == 0
-      return '' "nothing found
+    let go_paths = split(go#path#Default(), go#util#PathListSep())
+    if len(go_paths) == 0
+      return "" "nothing found
     endif
-    let l:bin_path = expand(l:go_paths[0] . '/bin/')
+    let bin_path = expand(go_paths[0] . "/bin/")
   endif
 
-  return l:bin_path
+  return bin_path
 endfunction
 
 " CheckBinPath checks whether the given binary exists or not and returns the
