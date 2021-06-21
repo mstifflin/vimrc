@@ -75,8 +75,8 @@ autocmd FileType go nmap <leader>t :GoTestFunc!<cr>
 autocmd FileType go nmap <leader>T :GoTest!<cr>
 autocmd FileType go nmap <leader>c :GoCoverageToggle!<cr>
 
-let g:go_def_mode='gopls'
-let g:go_info_mode='gopls'
+let g:go_def_mode="gopls"
+let g:go_info_mode="gopls"
 
 let g:go_fmt_command = "goimports"
 let g:go_fmt_options = {
@@ -101,19 +101,11 @@ let g:go_jump_to_error = 0
 " Show the name of each failed test before errors/logs
 let g:go_test_show_name = 1
 
-" Turn off code completion via omnifunc
-" With this off, the annoying autofill is turned off, but
-" smart auto complete is also off.
-" let g:go_code_completion_enabled = 0
-
 " Stop annoying pop up for every gofmt failure
 let g:go_fmt_fail_silently = 1
 
 " Turn off highlighting of same identifiers (slow?)
 let g:go_auto_sameids = 0
-
-" Currently by default :GoDecls and :GoDeclsDir show type and function declarations. This is customizable with the g:go_decls_includes setting. By default it's in the form of:
-let g:go_decls_includes = "func,type"
 
 " run :GoBuild or :GoTestCompile based on the go file
 function! s:build_go_files()
