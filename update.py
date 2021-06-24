@@ -15,61 +15,58 @@ from os import path
 
 # --- Globals ----------------------------------------------
 PLUGINS = """
-vim-go https://github.com/fatih/vim-go
-papercolor-theme https://github.com/NLKNguyen/papercolor-theme.git
-vim-hug-neovim-rpc https://github.com/roxma/vim-hug-neovim-rpc.git
-vim-toml https://github.com/cespare/vim-toml.git
-vim-thrift https://github.com/solarnz/thrift.vim.git
-vim-visual-multi https://github.com/mg979/vim-visual-multi.git
-vim-orgmode https://github.com/jceb/vim-orgmode
-vim-speeddating https://github.com/tpope/vim-speeddating
-auto-pairs https://github.com/jiangmiao/auto-pairs
-vim-yankstack https://github.com/maxbrunsfeld/vim-yankstack
-ale https://github.com/w0rp/ale
 ack.vim https://github.com/mileszs/ack.vim
+ale https://github.com/w0rp/ale
+auto-pairs https://github.com/jiangmiao/auto-pairs
 bufexplorer https://github.com/jlanzarotta/bufexplorer
-vim-coffee-script https://github.com/kchmck/vim-coffee-script
-rust.vim https://github.com/rust-lang/rust.vim
-vim-ruby https://github.com/vim-ruby/vim-ruby
-typescript-vim https://github.com/leafgarland/typescript-vim
-vim-javascript https://github.com/pangloss/vim-javascript
+coc.nvim https://github.com/neoclide/coc.nvim.git
+context.vim https://github.com/wellle/context.vim.git
+fzf.vim https://github.com/junegunn/fzf.vim.git
+goyo.vim https://github.com/junegunn/goyo.vim
+gruvbox https://github.com/morhetz/gruvbox
+lightline-ale https://github.com/maximbaz/lightline-ale
+lightline.vim https://github.com/itchyny/lightline.vim
 mayansmoke https://github.com/vim-scripts/mayansmoke
 nerdtree https://github.com/scrooloose/nerdtree
 nginx.vim https://github.com/chr4/nginx.vim
 open_file_under_cursor.vim https://github.com/amix/open_file_under_cursor.vim
+papercolor-theme https://github.com/NLKNguyen/papercolor-theme.git
+rainbow https://github.com/luochen1990/rainbow.git
+rust.vim https://github.com/rust-lang/rust.vim
 tlib https://github.com/vim-scripts/tlib
+typescript-vim https://github.com/leafgarland/typescript-vim
+vim-abolish https://github.com/tpope/tpope-vim-abolish
 vim-addon-mw-utils https://github.com/MarcWeber/vim-addon-mw-utils
 vim-bundle-mako https://github.com/sophacles/vim-bundle-mako
-vim-indent-object https://github.com/michaeljsmith/vim-indent-object
-vim-less https://github.com/groenewege/vim-less
-vim-surround https://github.com/tpope/vim-surround
-vim-expand-region https://github.com/terryma/vim-expand-region
-vim-fugitive https://github.com/tpope/vim-fugitive
-goyo.vim https://github.com/junegunn/goyo.vim
-vim-zenroom2 https://github.com/amix/vim-zenroom2
-vim-repeat https://github.com/tpope/vim-repeat
+vim-coffee-script https://github.com/kchmck/vim-coffee-script
 vim-commentary https://github.com/tpope/vim-commentary
-vim-gitgutter https://github.com/airblade/vim-gitgutter
-gruvbox https://github.com/morhetz/gruvbox
+vim-expand-region https://github.com/terryma/vim-expand-region
 vim-flake8 https://github.com/nvie/vim-flake8
-vim-pug https://github.com/digitaltoad/vim-pug
-lightline.vim https://github.com/itchyny/lightline.vim
-lightline-ale https://github.com/maximbaz/lightline-ale
-vim-abolish https://github.com/tpope/tpope-vim-abolish
-vim-markdown https://github.com/plasticboy/vim-markdown
+vim-fugitive https://github.com/tpope/vim-fugitive
 vim-gist https://github.com/mattn/vim-gist
+vim-gitgutter https://github.com/airblade/vim-gitgutter
+vim-go https://github.com/fatih/vim-go
+vim-hug-neovim-rpc https://github.com/roxma/vim-hug-neovim-rpc.git
+vim-indent-object https://github.com/michaeljsmith/vim-indent-object
+vim-javascript https://github.com/pangloss/vim-javascript
+vim-less https://github.com/groenewege/vim-less
+vim-markdown https://github.com/plasticboy/vim-markdown
+vim-orgmode https://github.com/jceb/vim-orgmode
+vim-pug https://github.com/digitaltoad/vim-pug
 vim-python-pep8-indent https://github.com/Vimjas/vim-python-pep8-indent
+vim-repeat https://github.com/tpope/vim-repeat
+vim-ruby https://github.com/vim-ruby/vim-ruby
 vim-snipmate https://github.com/garbas/vim-snipmate
 vim-snippets https://github.com/honza/vim-snippets
-context.vim https://github.com/wellle/context.vim.git
-fzf.vim https://github.com/junegunn/fzf.vim.git
-rainbow https://github.com/luochen1990/rainbow.git
-coc.nvim https://github.com/neoclide/coc.nvim.git
+vim-speeddating https://github.com/tpope/vim-speeddating
+vim-surround https://github.com/tpope/vim-surround
+vim-thrift https://github.com/solarnz/thrift.vim.git
+vim-toml https://github.com/cespare/vim-toml.git
+vim-visual-multi https://github.com/mg979/vim-visual-multi.git
+vim-yankstack https://github.com/maxbrunsfeld/vim-yankstack
+vim-zenroom2 https://github.com/amix/vim-zenroom2
 """.strip()
 
-# Forked, commented out autocompletion parts
-# https://github.com/dense-analysis/ale/issues/3373
-# ale https://github.com/w0rp/ale
 
 GITHUB_ZIP = "%s/archive/master.zip"
 
