@@ -74,6 +74,7 @@ let vim_markdown_folding_disabled = 1
 autocmd FileType go nmap <leader>t :GoTestFunc!<cr>
 autocmd FileType go nmap <leader>T :GoTest!<cr>
 autocmd FileType go nmap <leader>c :GoCoverageToggle!<cr>
+autocmd FileType go nmap <leader>id :GoSameIdsToggle<cr>
 
 let g:go_def_mode="gopls"
 let g:go_info_mode="gopls"
